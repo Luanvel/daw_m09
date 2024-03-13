@@ -29,7 +29,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index_bootstrap.html">Home</a>
+                            <a class="nav-link" aria-current="page" href="./index_bootstrap.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./resultat_cerca.html">Tots</a>
@@ -47,7 +47,7 @@
                             <a class="nav-link" href="./resultat_cerca.html">Fantasy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./resultat_cerca.html">Rol</a>
+                            <a class="nav-link active" href="./resultat_cerca.html">Rol</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./resultat_cerca.html"><i class="fa fa-heart"></i></a>
@@ -70,108 +70,87 @@
     </header>
 
     <div id="hero-image">
-        <h1>DREAMBOOKS</h1>
+        <h1>LLIBRES DE ROL</h1>
     </div>
 
-    <main>
-        <section id="book-type">
-
-            <h2>LLIBRES PER TIPUS</h2>
-            <div class="container">
-
-                <a href="./resultat_cerca.html">
-                    <figure class="figure">
-                        <img src="https://picsum.photos/150?random=1" class="figure-img img-fluid rounded-circle"
-                            alt="imatge de llibres">
-                        <figcaption class="figure-caption coloryellowlight">Tots</figcaption>
-                    </figure>
+    <main id="book-list">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/150?random=1" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
                 </a>
 
-                <a href="./resultat_cerca.html">
-                    <figure class="figure">
-                        <img src="https://picsum.photos/150?random=2" class="figure-img img-fluid rounded-circle"
-                            alt="imatge de llibres">
-                        <figcaption class="figure-caption coloryellowlight">Comic Americà</figcaption>
-                    </figure>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/150?random=2" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
                 </a>
 
-                <a href="./resultat_cerca.html">
-                    <figure class="figure">
-                        <img src="https://picsum.photos/150?random=3" class="figure-img img-fluid rounded-circle"
-                            alt="imatge de llibres">
-                        <figcaption class="figure-caption coloryellowlight">Manga</figcaption>
-                    </figure>
-                </a>
-
-                <a href="./resultat_cerca.html">
-                    <figure class="figure">
-                        <img src="https://picsum.photos/150?random=4" class="figure-img img-fluid rounded-circle"
-                            alt="imatge de llibres">
-                        <figcaption class="figure-caption coloryellowlight">Ciència Ficció</figcaption>
-                    </figure>
-                </a>
-
-                <a href="./resultat_cerca.html">
-                    <figure class="figure">
-                        <img src="https://picsum.photos/150?random=5" class="figure-img img-fluid rounded-circle"
-                            alt="imatge de llibres">
-                        <figcaption class="figure-caption coloryellowlight">Rol</figcaption>
-                    </figure>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/300?random=3" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
                 </a>
             </div>
-
-        </section>
-
-
-        <section id="recomendation-sales-container">
-
-            <article id="recomendation">
-                <h2>RECOMANACIÓ DEL DIA</h2>
-                <div class="container">
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="https://picsum.photos/500/300?random=6" class="figure-img img-fluid rounded"
-                                alt="imatge de llibres">
-                            <figcaption class="figure-caption coloryellowlight">Nom del llibre recomanat</figcaption>
-                        </figure>
-                    </a>
-                </div>
-            </article>
-
-            <article id="sales">
-                <h2>REBAIXES</h2>
-                <div class="container">
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="https://picsum.photos/200?random=7" class="figure-img img-fluid rounded"
-                                alt="Portada llibre de Rebaixes">
-                            <figcaption class="figure-caption coloryellowlight">Llibre de Rebaixes 1</figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="https://picsum.photos/200?random=8" class="figure-img img-fluid rounded"
-                                alt="Portada llibre de Rebaixes">
-                            <figcaption class="figure-caption coloryellowlight">Llibre de Rebaixes 2</figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="https://picsum.photos/200?random=9" class="figure-img img-fluid rounded"
-                                alt="Portada llibre de Rebaixes">
-                            <figcaption class="figure-caption coloryellowlight">Llibre de Rebaixes 3</figcaption>
-                        </figure>
-                    </a>
-                </div>
-            </article>
-
-        </section>
-
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/300?random=4" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
+                </a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/300?random=5" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
+                </a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/300?random=6" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
+                </a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/300?random=7" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
+                </a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://picsum.photos/300?random=8" alt="Card image cap">
+            <div class="card-body">
+                <a href="./detall.html">
+                    <h5 class="card-title">Nom del llibre</h5>
+                    <p class="card-text">Autor del llibre</p>
+                </a>
+            </div>
+        </div>
     </main>
 
-    <footer class="text-center text-white py-4">
+    <footer class="text-center text-white bg-dark py-4">
 
         <div class="container">
 
