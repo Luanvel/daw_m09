@@ -163,6 +163,15 @@ footer a,
   margin: 2em;
 }
 
+.card-body a.book-link:hover {
+  color: var(---color-accent1-dark) !important;
+}
+
+.card-body button.primary {
+  padding: 0.4em;
+  margin: 1em 0;
+}
+
 /* DETALL */
 
 button.primary {
