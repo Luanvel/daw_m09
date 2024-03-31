@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pàgina de Verònica Ruiz Abril</title>
+    <style>
+        .graphic-container {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="graphic-container">
+        <div id="my_dataviz">
+        </div>
+        <svg id="my_dataviz3" height=300 width=450></svg>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- Color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script>
+
+        // set the dimensions and margins of the graph
+        var width = 500
+        height = 450
+        margin = 40
+
+        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+        var radius = Math.min(width, height) / 2 - margin
+
+        // append the svg object to the div called 'my_dataviz'
+        var svg = d3.select("#my_dataviz")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        // Create data
+        var data = { Chrome: 63.59, Safari: 19.14, Firefox: 3.76, Edge: 3.41, SamsungInternet: 3.31, Opera: 2.19, Altres: 4.6 }
+
+        // set the color scale
+        var color = d3.scaleOrdinal()
+            .domain(data)
+            .range(d3.schemeSet2);
+
+        // Compute the position of each group on the pie:
+        var pie = d3.pie()
+            .value(function (d) { return d.value; })
+        var data_ready = pie(d3.entries(data))
+        // Now I know that group A goes from 0 degrees to x degrees and so on.
+
+        // shape helper to build arcs:
+        var arcGenerator = d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius)
+
+        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+        svg
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('path')
+            .attr('d', arcGenerator)
+            .attr('fill', function (d) { return (color(d.data.key)) })
+            .attr("stroke", "black")
+            .style("stroke-width", "2px")
+            .style("opacity", 0.7)
+
+        // Now add the annotation. Use the centroid method to get the best coordinates
+        svg
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('text')
+            .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+            .style("text-anchor", "middle")
+            .style("font-size", 17)
+    </script>
+
+    <script>
+
+        // select the svg area
+        var SVG = d3.select("#my_dataviz3")
+
+        // create a list of keys
+        var keys = ["Google Chrome", "Safari", "Firefox", "Edge", "Samsung Internet", "Opera", "Altres"]
+
+        // Usually you have a color scale in your chart already
+        var color = d3.scaleOrdinal()
+            .domain(keys)
+            .range(d3.schemeSet2);
+
+        // Add one dot in the legend for each name.
+        var size = 20
+        SVG.selectAll("mydots")
+            .data(keys)
+            .enter()
+            .append("rect")
+            .attr("x", 100)
+            .attr("y", function (d, i) { return 100 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("width", size)
+            .attr("height", size)
+            .style("fill", function (d) { return color(d) })
+
+        // Add one dot in the legend for each name.
+        SVG.selectAll("mylabels")
+            .data(keys)
+            .enter()
+            .append("text")
+            .attr("x", 100 + size * 1.2)
+            .attr("y", function (d, i) { return 100 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
+            .style("fill", function (d) { return color(d) })
+            .text(function (d) { return d })
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+    </script>
+
+</body>
+
+</html>

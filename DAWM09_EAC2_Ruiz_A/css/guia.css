@@ -378,3 +378,17 @@ div.form-row {
     transform: scale(1.1) rotate(-2.5deg);
   }
 }
+
+#graphic {
+  align-items: unset;
+  justify-content: space-around;
+}
+
+#graphic #select-graphic {
+  align-items: center;
+  flex-direction: column;
+}
+
+#graphic label {
+  margin: 0.5em;
+}

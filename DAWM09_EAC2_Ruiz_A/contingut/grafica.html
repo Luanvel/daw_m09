@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/guia.css">
 </head>
 
-<body>
+<body id="graphic">
 
     <header data-bs-theme="dark">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -114,37 +114,28 @@
     </div>
 
     <main>
-        <section id="recomendation-sales-container">
-
-            <article id="sales">
-                <div class="container">
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="../images/players_handbook_cover.webp" class="figure-img img-fluid rounded"
-                                alt="Player's Handbook Cover">
-                            <figcaption class="figure-caption coloryellowlight">Player's Handbook</figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="../images/dungeon_master_guide_cover.webp" class="figure-img img-fluid rounded"
-                                alt="Dungeon's Master Guide Cover">
-                            <figcaption class="figure-caption coloryellowlight">Dungeon's Master Guide</figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="../images/monster_manual_cover.webp" class="figure-img img-fluid rounded"
-                                alt="Monster Manual Cover">
-                            <figcaption class="figure-caption coloryellowlight">Monster Manual</figcaption>
-                        </figure>
-                    </a>
+        <div class="container-fluid">
+            <div class="row align-items-center flex-row">
+                <div class="col-sm-4 text-center">
+                    <section>
+                        <form id="select-graphic">
+                            Tipus de gràfica:<br />
+                            <label for="barres">Barres</label><input type="radio" name="tipusGrafic" id="barres"
+                                value="barres" onclick="selectGraphic('./grafica_barres.html')"><br>
+                            <label for="pastis">Pastís</label><input type="radio" name="tipusGrafic" id="pastis"
+                                value="pastis" onclick="selectGraphic('./grafica_pastis.html')"><br>
+                            <label for="donut">Donut</label><input type="radio" name="tipusGrafic" id="donut"
+                                value="donut" onclick="selectGraphic('./grafica_donut.html')"><br>
+                        </form>
+                    </section>
                 </div>
-            </article>
-
-        </section>
+                <div class="col-sm-8 text-center" style="background-color: rgb(255, 245, 216);">
+                    <section>
+                        <iframe id="grafica" src="grafica_barres.html" style="width:60%;height:55vh"></iframe>
+                    </section>
+                </div>
+            </div>
+        </div>
 
     </main>
 
@@ -186,6 +177,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
+    <script>
+        function selectGraphic(chosenGraphic) {
+            document.getElementById("grafica").src = chosenGraphic;
+        }
+    </script>
 </body>
 
 </html>
