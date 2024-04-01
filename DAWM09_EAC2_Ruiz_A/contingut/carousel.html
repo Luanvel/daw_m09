@@ -14,6 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/guia.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
 </head>
 
 <body>
@@ -109,42 +111,31 @@
         </nav>
     </header>
 
-    <div id="hero-image">
+    <div id="hero-image-carousel">
         <h1>CAROUSEL</h1>
     </div>
 
     <main>
-        <section id="recomendation-sales-container">
+        <h2>The Wild Beyond The Witchlight</h2>
+        <br>
+        <div class="carousel-wrapper">
+            <button class="carousel-button-prev btn btn-warning" type="button">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span class="visually-hidden">Previous</span>
+            </button>
 
-            <article id="sales">
-                <div class="container">
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="../images/players_handbook_cover.webp" class="figure-img img-fluid rounded"
-                                alt="Player's Handbook Cover">
-                            <figcaption class="figure-caption coloryellowlight">Player's Handbook</figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="../images/dungeon_master_guide_cover.webp" class="figure-img img-fluid rounded"
-                                alt="Dungeon's Master Guide Cover">
-                            <figcaption class="figure-caption coloryellowlight">Dungeon's Master Guide</figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="./detall.html">
-                        <figure class="figure">
-                            <img src="../images/monster_manual_cover.webp" class="figure-img img-fluid rounded"
-                                alt="Monster Manual Cover">
-                            <figcaption class="figure-caption coloryellowlight">Monster Manual</figcaption>
-                        </figure>
-                    </a>
+            <div class="carousel">
+                <div class="car-item">
+                    <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/d7130e26-a230-4d7e-9c80-4cc72f94174f.__CR0,0,970,600_PT0_SX970_V1___.jpg"
+                        alt="...">
                 </div>
-            </article>
+            </div>
 
-        </section>
+            <button class="carousel-button-next  btn btn-warning" type="button">
+                <i class="fa-solid fa-chevron-right"></i>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
     </main>
 
@@ -182,9 +173,60 @@
 
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script>
+        const imatges = [
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/d7130e26-a230-4d7e-9c80-4cc72f94174f.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/bad25a34-a056-48fc-a9f3-9d18c9bc4be8.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/b9b34987-d4da-4477-b38c-e6ea5e99d746.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/a0d25b50-c6ff-4c62-9a0a-9a6886ddb3a3.__CR0,0,970,600_PT0_SX970_V1___.jpg",
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/14b11ec5-6644-4546-a8fa-3fa5e5b7f56b.__CR0,0,970,600_PT0_SX970_V1___.jpg"
+        ];
+
+        const carousel = document.querySelector(".carousel");
+        const img = document.querySelector(".car-item img");
+
+        const prevButton = document.querySelector(".carousel-button-prev");
+        const nextButton = document.querySelector(".carousel-button-next");
+
+        let currentIndex = 0;
+
+        //Rep el parametre direction, així sabrem si es mou cap a l'esquerra o la dreta segons el boto clickat
+        function animarCarousel(direction) {
+            //Si volem la següent foto, incrementarem l'index en 1, però si arriba al final utilitzem
+            //L'operador mòdul perque currentIndex no pugui sortir dels limits.
+            if (direction === "next") {
+                currentIndex = (currentIndex + 1) % imatges.length;
+                console.log(currentIndex);
+            } else {
+                //Aquí utilitzem el carousel cap a l'esquerra, per tant, treiem 1. Es necessita sumar imatges-length perquè sino
+                //el número negatiu ens portaria a un índex que no existeix.
+                currentIndex = (currentIndex - 1 + imatges.length) % imatges.length;
+                console.log(currentIndex);
+            }
+
+            anime({
+                targets: img,
+                opacity: 0,
+                duration: 500,
+                easing: "easeOutQuad",
+                complete: () => {
+                    //Modifiquem el src de la imatge per mostrar la que ens serveixi de l'array
+                    img.src = imatges[currentIndex];
+                    anime({
+                        targets: img,
+                        opacity: 1,
+                        duration: 500,
+                        easing: "easeOutQuad"
+                    })
+                }
+            })
+        }
+
+        prevButton.addEventListener("click", () => { animarCarousel("prev") });
+
+        nextButton.addEventListener("click", () => { animarCarousel("next") });
+
+    </script>
 
 </body>
 

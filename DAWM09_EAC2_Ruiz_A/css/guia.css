@@ -392,3 +392,30 @@ div.form-row {
 #graphic label {
   margin: 0.5em;
 }
+
+#hero-image-carousel {
+  height: 15em;
+  background-image: url("https://images.ctfassets.net/swt2dsco9mfe/5hvcpZM9EuL4dYa9cnPfW2/9a62a131d86b308bf7a114ebca4fbf64/c9yJAEn8GDeHWqD-hero-bg.jpg?q=70&w=1920&fm=avif");
+  text-align: center;
+  background-position: center;
+  display: flex;
+  background-position-y: 20em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.carousel .car-item {
+  margin: 0 1em;
+}
+
+.carousel-button-prev,
+.carousel-button-next {
+  margin: 0 2em;
+}
