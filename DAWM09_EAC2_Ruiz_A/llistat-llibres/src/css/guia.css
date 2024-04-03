@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Lustria&family=Pacifico&display=swap");
+
+:root {
+  /*** Main Colors ***/
+  ---color-principal-neutral: #f2e497;
+  ---color-principal-dark: #ecd86a;
+  ---color-principal-light: #f8f0c4;
+
+  ---color-secondary-neutral: #2c2c2c;
+  ---color-secondary-dark: #121212;
+  ---color-secondary-light: #454545;
+
+  ---color-accent1-neutral: #ff7043;
+  ---color-accent1-dark: #ff4910;
+  ---color-accent1-light: #ff9776;
+
+  ---color-extra2-neutral: #6aec97;
+  ---color-extra2-dark: #53e987;
+  ---color-extra2-light: #81efa7;
+
+  ---color-white: #ffff;
+  ---color-white-dark: #f2f2f2;
+
+  /** General **/
+  --spacer: 1em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(---color-secondary-neutral);
+  color: var(---color-principal-neutral);
+  font-family: Lustria, sans-serif;
+}
+
+.navbar-brand img {
+  width: 50%;
+}
+
+.search-bar {
+  margin-right: 3em;
+}
+
+h1 {
+  font-family: Pacifico, sans-serif;
+  color: #2c2c2c;
+  font-size: 3em;
+  text-shadow: 0 0 1em rgb(255, 239, 193);
+}
+
+h2,
+h3 {
+  font-family: Pacifico, sans-serif;
+  color: var(---color-principal-neural);
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: var(---color-principal-light) !important;
+  font-family: Lustria, sans-serif;
+  font-size: 1.5em;
+}
+
+a:hover {
+  color: var(---color-principal-neural);
+}
+
+.custom-dropdown {
+  background-color: var(---color-secondary-dark);
+}
