@@ -8,13 +8,13 @@ import logo from "../img/logo.svg";
 export default function Header() {
   return (
     <Navbar expand="lg" className="bg-dark">
-      <Navbar.Brand className="navbar-brand" href="#home">
+      <Navbar.Brand className="navbar-brand" href="../../index.html">
         <img src={logo} alt="" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Tots</Nav.Link>
+          <Nav.Link href="#link">Tots</Nav.Link>
           <Nav.Link href="#link">Còmic Americà</Nav.Link>
           <Nav.Link href="#link">Manga</Nav.Link>
           <Nav.Link href="#link">Ciència Ficció</Nav.Link>
