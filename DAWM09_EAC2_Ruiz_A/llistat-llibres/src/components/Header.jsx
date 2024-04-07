@@ -8,7 +8,7 @@ import logo from "../img/logo.svg";
 export default function Header() {
   return (
     <Navbar expand="lg" className="bg-dark">
-      <Navbar.Brand className="navbar-brand" href="../../index.html">
+      <Navbar.Brand className="navbar-brand" href="./">
         <img src={logo} alt="" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
