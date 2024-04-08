@@ -1,0 +1,23 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.form-element {
+  width: 80%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
