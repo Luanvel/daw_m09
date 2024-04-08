@@ -2,7 +2,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  width: 20%;
+  align-self: center;
 }
 
 .form-row {
